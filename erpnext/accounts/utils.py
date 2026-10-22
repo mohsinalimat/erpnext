@@ -1624,7 +1624,7 @@ def get_autoname_with_number(number_value, doc_title, company):
 	if cstr(number_value).strip():
 		parts.insert(0, cstr(number_value).strip())
 
-	return " - ".join(parts)
+	return " - ".join(str(part or "") for part in parts)
 
 
 def parse_naming_series_variable(doc, variable):
